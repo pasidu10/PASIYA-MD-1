@@ -1,5 +1,5 @@
 const config = require('../settings');
-const { ven, commands } = require('../hisoka');
+const { ven, commands } = require('../pasiya');
 
 ven({
     pattern: "ping",

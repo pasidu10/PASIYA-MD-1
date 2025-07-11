@@ -1,5 +1,10 @@
 const { ven } = require('../pasiya');
 const config = require('../settings');
+const os = require("os");
+const fs = require("fs");
+const { runtime } = require('../lib/functions');
+const { exec } = require("child_process");
+
 
 ven({
     pattern: "owner",

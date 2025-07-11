@@ -106,11 +106,11 @@ ven({
 ╰━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╯
 
 
-       𓆩 𝒑𝒐𝒘𝒆𝒓𝒆𝒅 𝒃𝒚 𝒉𝒂𝒏𝒔 𝒃𝒚𝒕𝒆 𓆪`;
+       𓆩 𝒑𝒐𝒘𝒆𝒓𝒆𝒅 𝒃𝒚 *PASIYA MD* 𓆪`;
 
         // Send image with system info as caption
         return await conn.sendMessage(from, { 
-            image: { url: "https://i.ibb.co/FLSgNhW9/Free.png" }, 
+            image: { url: "https://i.ibb.co/Hp93NXGs/6d677926ce5b1c4f53914fb156058f0d.jpg" }, 
             caption: status 
         }, { quoted: mek });
 

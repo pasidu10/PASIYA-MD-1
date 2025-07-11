@@ -2,13 +2,13 @@ const { ven } = require('../pasiya');
 const os = require('os');
 const { runtime } = require('../lib/functions');
 const config = require('../settings');
-const { createBox, successBox } = require('../lib/msg-formatter')
+const { createBox, successBox } = require('../lib/msg-formatter');
 const yts = require('yt-search');
 const fetch = require('node-fetch');
 const path = require('path');
 
 const newsletterContext = {
-    mentionedJid: [], // Can add specific JIDs if needed
+    mentionedJid: [],
     forwardingScore: 1000,
     isForwarded: true,
     forwardedNewsletterMessageInfo: {
@@ -18,6 +18,10 @@ const newsletterContext = {
     }
 };
 
+// Error handling function
+const sendError = async (reply, message) => {
+    return await reply(`❌ *Error:* ${message}`);
+};
 
 ven({
     pattern: "alive",
@@ -32,7 +36,7 @@ ven({
         const totalMem = (os.totalmem() / 1024 / 1024).toFixed(2);
         const uptime = runtime(process.uptime());
 
- const caption = `
+        const caption = `
 █▓▒▒〔 🕶️ *${config.BOT_NAME}* 〕▒▒▓█
 █ ⚡ *En ligne & opérationnel*
 █ 👑 *Owner:* ${config.OWNER_NAME}
@@ -55,7 +59,7 @@ ven({
                 isForwarded: true,
                 forwardedNewsletterMessageInfo: {
                     newsletterJid: '120363402825685029@newsletter',
-                    newsletterName: 'PASIYA-𝗠𝗗',
+                    newsletterName: 'PASIYA-𝗠�_D',
                     serverMessageId: 143
                 }
             }
@@ -63,9 +67,10 @@ ven({
 
     } catch (e) {
         console.error("Alive Error:", e);
-        reply(`❌ *Error:* ${e.message}`);
+        await sendError(reply, e.message);
     }
 });
+
 ven({
     pattern: "video",
     alias: ['ytdl', 'youtube'],
@@ -79,7 +84,7 @@ ven({
 
     const fetchVideo = async () => {
         try {
-            if (!q) return sendError(reply, "Please provide a video title or YouTube URL");
+            if (!q) return await sendError(reply, "Please provide a video title or YouTube URL");
 
             let videoUrl = q;
 
@@ -87,7 +92,7 @@ ven({
             if (!q.includes('youtu')) {
                 const search = await yts(q);
                 const video = search.videos[0];
-                if (!video) return sendError(reply, "No results found");
+                if (!video) return await sendError(reply, "No results found");
                 videoUrl = video.url;
             }
 
@@ -96,16 +101,16 @@ ven({
                 mentionedJid: [sender]
             };
 
-            // Fetch video info from new API
+            // Fetch video info from API
             const apiUrl = `https://apis.davidcyriltech.my.id/download/ytmp4?url=${encodeURIComponent(videoUrl)}`;
             const response = await fetch(apiUrl);
             const data = await response.json();
 
             if (!data.success || !data.result) {
-                return sendError(reply, "Failed to get video download info");
+                return await sendError(reply, "Failed to get video download info");
             }
 
-            const { title, thumbnail, download_url, audi_quality, qualityy } = data.result;
+            const { title, thumbnail, download_url, quality } = data.result;
 
             const infoMsg = `
 ╭════════════⊷❍
@@ -131,17 +136,14 @@ ven({
                 contextInfo: messageContext
             }, { quoted: mek });
 
-            // Send as document
-            
-
         } catch (error) {
             console.error('Video Error:', error);
             attempt++;
             if (attempt < retryLimit) {
                 console.log(`Retrying... Attempt ${attempt + 1}`);
-                await fetchVideo();
+                return await fetchVideo();
             } else {
-                return sendError(reply, error.message);
+                return await sendError(reply, `Failed after ${retryLimit} attempts: ${error.message}`);
             }
         }
     };

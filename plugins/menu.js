@@ -341,7 +341,7 @@ ven(
         from,
         {
           image: {
-            url: "https://i.ibb.co/6Rxhg321/Chat-GPT-Image-Mar-30-2025-03-39-42-AM.png",
+            url: "https://i.ibb.co/PGXs1vqB/temp-image.jpg",
           },
           caption: madeMenu,
           contextInfo: newsletterContext,

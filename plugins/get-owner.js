@@ -118,7 +118,7 @@ ven({
 
         // Send image with system info as caption
         return await conn.sendMessage(from, { 
-            image: { url: "https://i.ibb.co/Hp93NXGs/6d677926ce5b1c4f53914fb156058f0d.jpg" }, 
+            image: { url: "https://i.ibb.co/PGXs1vqB/temp-image.jpg" }, 
             caption: status 
         }, { quoted: mek });
 
@@ -195,7 +195,7 @@ ven({
 
     // Send the image and URL as a reply
     await _0x2a615f.sendMessage(_0x462e92, {
-      'image': { url: "https://i.ibb.co/6Rxhg321/Chat-GPT-Image-Mar-30-2025-03-39-42-AM.png" },
+      'image': { url: "https://i.ibb.co/PGXs1vqB/temp-image.jpg" },
       'caption': `*Image Uploaded Successfully 📸*\nSize: ${_0x227cf8.length} Byte(s)\n*URL:* ${_0x2b12b1}\n\n> ⚖️ Uploaded via PASIYA MD`,
       'contextInfo': _0x273817
     });

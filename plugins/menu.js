@@ -9,7 +9,7 @@
  * @version 3.0.0
  **/
 
-const { readEnv } = require('../config');
+const { readEnv } = require("../settings");
 const {ven , commands} = require('../trend')
 const os = require('os');
 const { runtime } = require('../lib/functions');

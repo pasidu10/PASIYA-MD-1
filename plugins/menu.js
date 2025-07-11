@@ -1,5 +1,5 @@
 const { ven, commands } = require('../pasiya');
-const config = require('../config');
+const config = require('../settings');
 const { runtime } = require("../lib/functions");
 
 ven(

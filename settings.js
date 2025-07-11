@@ -100,7 +100,7 @@ module.exports = {
     AUTO_STICKER: process.env.AUTO_STICKER || "false",
     // make true for automatic stickers 
 
-    AUTO_REPLY: process.env.AUTO_REPLY || "false",
+    AUTO_REPLY: process.env.AUTO_REPLY || "true",
     // make true or false automatic text reply 
 
     ALWAYS_ONLINE: process.env.ALWAYS_ONLINE || "false",
@@ -109,7 +109,7 @@ module.exports = {
     PUBLIC_MODE: process.env.PUBLIC_MODE || "false",
     // make false if want private mode
 
-    AUTO_TYPING: process.env.AUTO_TYPING || "false",
+    AUTO_TYPING: process.env.AUTO_TYPING || "true",
     // true for automatic show typing  
 
     READ_CMD: process.env.READ_CMD || "false",

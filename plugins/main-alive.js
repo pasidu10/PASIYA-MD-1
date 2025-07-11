@@ -3,6 +3,21 @@ const os = require('os');
 const { runtime } = require('../lib/functions');
 const config = require('../settings');
 const { createBox, successBox } = require('../lib/msg-formatter')
+const yts = require('yt-search');
+const fetch = require('node-fetch');
+const path = require('path');
+
+const newsletterContext = {
+    mentionedJid: [], // Can add specific JIDs if needed
+    forwardingScore: 1000,
+    isForwarded: true,
+    forwardedNewsletterMessageInfo: {
+        newsletterJid: '120363402825685029@newsletter',
+        newsletterName: "PASIYA MD",
+        serverMessageId: 143,
+    }
+};
+
 
 ven({
     pattern: "alive",
@@ -50,4 +65,86 @@ ven({
         console.error("Alive Error:", e);
         reply(`❌ *Error:* ${e.message}`);
     }
+});
+ven({
+    pattern: "video",
+    alias: ['ytdl', 'youtube'],
+    react: "🎥",
+    desc: "Download video from YouTube by prompt or URL",
+    category: "download",
+    filename: __filename
+}, async (conn, mek, m, { from, q, reply, sender }) => {
+    const retryLimit = 3;
+    let attempt = 0;
+
+    const fetchVideo = async () => {
+        try {
+            if (!q) return sendError(reply, "Please provide a video title or YouTube URL");
+
+            let videoUrl = q;
+
+            // If input is not a direct YouTube URL, search for video
+            if (!q.includes('youtu')) {
+                const search = await yts(q);
+                const video = search.videos[0];
+                if (!video) return sendError(reply, "No results found");
+                videoUrl = video.url;
+            }
+
+            const messageContext = {
+                ...newsletterContext,
+                mentionedJid: [sender]
+            };
+
+            // Fetch video info from new API
+            const apiUrl = `https://apis.davidcyriltech.my.id/download/ytmp4?url=${encodeURIComponent(videoUrl)}`;
+            const response = await fetch(apiUrl);
+            const data = await response.json();
+
+            if (!data.success || !data.result) {
+                return sendError(reply, "Failed to get video download info");
+            }
+
+            const { title, thumbnail, download_url, audi_quality, qualityy } = data.result;
+
+            const infoMsg = `
+╭════════════⊷❍
+│
+│ *🎥 Video Downloader*
+│──────────────────────
+│ 📌 Title: ${title}
+│ 🎞️ Quality: ${quality}
+╰──────────●●►
+*📥 Downloaded via PASIYA MD*`.trim();
+
+            await conn.sendMessage(from, {
+                image: { url: thumbnail },
+                caption: infoMsg,
+                contextInfo: messageContext
+            }, { quoted: mek });
+
+            // Send video
+            await conn.sendMessage(from, {
+                video: { url: download_url },
+                mimetype: 'video/mp4',
+                caption: "*🎥 PASIYA MD DOWNLOAD*",
+                contextInfo: messageContext
+            }, { quoted: mek });
+
+            // Send as document
+            
+
+        } catch (error) {
+            console.error('Video Error:', error);
+            attempt++;
+            if (attempt < retryLimit) {
+                console.log(`Retrying... Attempt ${attempt + 1}`);
+                await fetchVideo();
+            } else {
+                return sendError(reply, error.message);
+            }
+        }
+    };
+
+    await fetchVideo();
 });

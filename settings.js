@@ -97,8 +97,10 @@ module.exports = {
     ANTI_LINK_KICK: process.env.ANTI_LINK_KICK || "false",
     // make anti link true,false for groups 
 
-    AUTO_STICKER: process.env.AUTO_STICKER || "false",
+    AUTO_STICKER: process.env.AUTO_STICKER || "true",
     // make true for automatic stickers 
+
+    AUTO_VOICE: process.env.AUTO_VOICE || "true",
 
     AUTO_REPLY: process.env.AUTO_REPLY || "true",
     // make true or false automatic text reply 

@@ -12,7 +12,7 @@ module.exports = {
     PREFIX: process.env.PREFIX || ".",
     // add your prefix for bot
 
-    BOT_NAME: process.env.BOT_NAME || "TREND-X",
+    BOT_NAME: process.env.BOT_NAME || "PASIYA MD",
     // add bot name here for menu
 
     MODE: process.env.MODE || "public",
@@ -33,7 +33,7 @@ module.exports = {
     AUTO_STATUS_REACT: process.env.AUTO_STATUS_REACT || "true",
     // make true if you want auto reply on status 
 
-    AUTO_STATUS_MSG: process.env.AUTO_STATUS_MSG || "*SEEN YOUR STATUS BY TREND-X 😆*",
+    AUTO_STATUS_MSG: process.env.AUTO_STATUS_MSG || "*SEEN YOUR STATUS*",
     // set the auto reply message on status reply  
 
     WELCOME: process.env.WELCOME || "true",
@@ -48,23 +48,21 @@ module.exports = {
     MENTION_REPLY: process.env.MENTION_REPLY || "false",
     // make true if want auto voice reply if someone mention you 
 
-    MENU_IMAGE_URL: process.env.MENU_IMAGE_URL || "https://files.catbox.moe/adymbp.jpg",
+    MENU_IMAGE_URL: process.env.MENU_IMAGE_URL || "https://i.ibb.co/PGXs1vqB/temp-image.jpg",
     // add custom menu and mention reply image url
 
-    ALIVE_IMG: process.env.ALIVE_IMG || "https://files.catbox.moe/adymbp.jpg",
+    ALIVE_IMG: process.env.ALIVE_IMG || "https://i.ibb.co/PGXs1vqB/temp-image.jpg",
     // add img for alive msg
 
     LIVE_MSG: process.env.LIVE_MSG || 
 `> ʙᴏᴛ ɪs sᴘᴀʀᴋɪɴɢ ᴀᴄᴛɪᴠᴇ ᴀɴᴅ ᴀʟɪᴠᴇ
 
-ᴋᴇᴇᴘ ᴜsɪɴɢ ✦TREND-X✦ ғʀᴏᴍ TREND-X⚡
+ᴋᴇᴇᴘ ᴜsɪɴɢ ✦ᴘᴀꜱɪʏᴀ ᴍᴅ✦
 
-*© TREND-X - ᴍᴅ*
-
-> ɢɪᴛʜᴜʙ : github.com/XdKing2/LITE-XD`,
+*© ᴘᴀꜱɪʏᴀ - ᴍᴅ*`,
     // add alive msg here 
 
-    STICKER_NAME: process.env.STICKER_NAME || "TREND-X",
+    STICKER_NAME: process.env.STICKER_NAME || "ᴘᴀꜱɪʏᴀ ᴍᴅ ᴍᴀᴋᴇ",
     // type sticker pack name 
 
     CUSTOM_REACT: process.env.CUSTOM_REACT || "false",
@@ -76,13 +74,13 @@ module.exports = {
     DELETE_LINKS: process.env.DELETE_LINKS || "false",
     // automatic delete links without removing member 
 
-    OWNER_NUMBER: process.env.OWNER_NUMBER || "26371475XXXX",
+    OWNER_NUMBER: process.env.OWNER_NUMBER || "94784548818",
     // add your bot owner number
 
-    OWNER_NAME: process.env.OWNER_NAME || "TREND-X",
+    OWNER_NAME: process.env.OWNER_NAME || "ᴘᴀꜱɪʏᴀ",
     // add bot owner name
 
-    DESCRIPTION: process.env.DESCRIPTION || "*© ᴘᴏᴡᴇʀᴇᴅ ʙʏ TREND-X*",
+    DESCRIPTION: process.env.DESCRIPTION || "*© ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴘᴀꜱɪʏᴀ ᴍᴅ*",
     // add bot owner description  
 
     READ_MESSAGE: process.env.READ_MESSAGE || "false",
@@ -111,13 +109,13 @@ module.exports = {
     PUBLIC_MODE: process.env.PUBLIC_MODE || "false",
     // make false if want private mode
 
-    AUTO_TYPING: process.env.AUTO_TYPING || "true",
+    AUTO_TYPING: process.env.AUTO_TYPING || "false",
     // true for automatic show typing  
 
     READ_CMD: process.env.READ_CMD || "false",
     // true if want mark commands as read  
 
-    DEV: process.env.DEV || "263780166288",
+    DEV: process.env.DEV || "94784548818",
     // replace with your whatsapp number  
 
     ANTI_VV: process.env.ANTI_VV || "true",
@@ -126,22 +124,11 @@ module.exports = {
     ANTI_DEL_PATH: process.env.ANTI_DEL_PATH || "inbox",
     // change it to 'inbox' or 'same' if you want to resend deleted message in same chat 
 
-    AUTO_RECORDING: process.env.AUTO_RECORDING || "false",
+    AUTO_RECORDING: process.env.AUTO_RECORDING || "true",
     // make it true for auto recording 
 
     version: process.env.version || "0.0.5",
 
     START_MSG: process.env.START_MSG || 
-`*Hᴇʟʟᴏ ᴛʜᴇʀᴇ TREND-X ᴄᴏɴɴᴇᴄᴛᴇᴅ! 👋🏻* 
-
-*ᴋᴇᴇᴘ ᴏɴ ᴜsɪɴɢ TREND-X🚩* 
-
-
-- *ʏᴏᴜʀ ʙᴏᴛ ᴘʀᴇғɪx: ➡️[ config.PREFIX ]*
-> - ʏᴏᴜ ᴄᴀɴ ᴄʜᴀɴɢᴇ ᴜʀ ᴘʀᴇғɪx ᴜsɪɴɢ ᴛʜᴇ .ᴘʀᴇғɪx ᴄᴏᴍᴍᴀɴᴅ
-
-> ᴅᴏɴᴛ ғᴏʀɢᴇᴛ ᴛᴏ sʜᴀʀᴇ, sᴛᴀʀ & ғᴏʀᴋ ᴛʜᴇ ʀᴇᴘᴏ ⬇️ 
-
-
-> © ᴘᴏᴡᴇʀᴇᴅ ʙʏ TREND-X`
+`*Hᴇʟʟᴏ ᴛʜᴇʀᴇ PASIYA MD ᴄᴏɴɴᴇᴄᴛᴇᴅ! 👋🏻*`
 };

@@ -6,7 +6,7 @@ function convertToBool(text, fault = 'true') {
 }
 
 module.exports = {
-    SESSION_ID: process.env.SESSION_ID || "",
+    SESSION_ID: process.env.SESSION_ID || "C95nkbZD#xhn8aCo553KtGwxW7k_2B7_cQj_MC6mX-4DJPNFnJIg",
     // add your Session Id make sure it starts with trend-x~
 
     PREFIX: process.env.PREFIX || ".",
@@ -45,7 +45,7 @@ module.exports = {
     ANTI_LINK: process.env.ANTI_LINK || "true",
     // make anti link true,false for groups 
 
-    MENTION_REPLY: process.env.MENTION_REPLY || "false",
+    MENTION_REPLY: process.env.MENTION_REPLY || "true",
     // make true if want auto voice reply if someone mention you 
 
     MENU_IMAGE_URL: process.env.MENU_IMAGE_URL || "https://i.ibb.co/PGXs1vqB/temp-image.jpg",
@@ -77,7 +77,7 @@ module.exports = {
     OWNER_NUMBER: process.env.OWNER_NUMBER || "94784548818",
     // add your bot owner number
 
-    OWNER_NAME: process.env.OWNER_NAME || "ᴘᴀꜱɪʏᴀ",
+    OWNER_NAME: process.env.OWNER_NAME || "pasidu sampath",
     // add bot owner name
 
     DESCRIPTION: process.env.DESCRIPTION || "*© ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴘᴀꜱɪʏᴀ ᴍᴅ*",
@@ -131,4 +131,3 @@ module.exports = {
 
     START_MSG: process.env.START_MSG || 
 `*Hᴇʟʟᴏ ᴛʜᴇʀᴇ PASIYA MD ᴄᴏɴɴᴇᴄᴛᴇᴅ! 👋🏻*`
-};

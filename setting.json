@@ -1,0 +1,15 @@
+{
+  "WELCOME": true,
+  "AUTO_REPLY": true,
+  "AUTO_VOICE": true,
+  "AI_BOT": false,
+  "TYPING": false,
+  "RECORDING": false,
+  "ONLINE": true,
+  "FOREX_BOT": false,
+  "BINANCE_BOT": false,
+  "AUTO_STATUS_SEEN": true,
+  "AUTO_STATUS_REPLY": false,
+  "ANTI_DELETE": true,
+  "ONE_VIEW": false
+}

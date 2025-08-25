@@ -820,3 +820,5 @@ if (!isReact && config.CUSTOM_REACT === 'true') {
   setTimeout(() => {
   connectToWA()
   }, 8000);
+const autoUpdates = require("./commands/autoUpdate")
+autoUpdates(sock)
